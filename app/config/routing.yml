@@ -1,3 +1,28 @@
+back_office:
+    resource: "@BackOfficeBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+commande:
+    resource: "@CommandeBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+panier:
+    resource: "@PanierBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+catalogue:
+    resource: "@CatalogueBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+utilisateur:
+    resource: "@UtilisateurBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
 general:
     resource: "@GeneralBundle/Controller/"
     type:     annotation
