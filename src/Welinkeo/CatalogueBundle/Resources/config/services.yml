@@ -1,0 +1,4 @@
+services:
+#    welinkeo_catalogue.example:
+#        class: Welinkeo\CatalogueBundle\Example
+#        arguments: ["@service_id", "plain_value", "%parameter%"]

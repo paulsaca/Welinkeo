@@ -1,3 +1,33 @@
+welinkeo_back_office:
+    resource: "@WelinkeoBackOfficeBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+welinkeo_catalogue:
+    resource: "@WelinkeoCatalogueBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+welinkeo_commande:
+    resource: "@WelinkeoCommandeBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+welinkeo_panier:
+    resource: "@WelinkeoPanierBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+welinkeo_utilisateur:
+    resource: "@WelinkeoUtilisateurBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+welinkeo_general:
+    resource: "@WelinkeoGeneralBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
 app:
     resource: "@AppBundle/Controller/"
     type:     annotation

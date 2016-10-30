@@ -1,0 +1,4 @@
+services:
+#    welinkeo_panier.example:
+#        class: Welinkeo\PanierBundle\Example
+#        arguments: ["@service_id", "plain_value", "%parameter%"]

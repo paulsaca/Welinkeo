@@ -16,6 +16,12 @@ class AppKernel extends Kernel
             new Doctrine\Bundle\DoctrineBundle\DoctrineBundle(),
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
             new AppBundle\AppBundle(),
+            new Welinkeo\GeneralBundle\WelinkeoGeneralBundle(),
+            new Welinkeo\UtilisateurBundle\WelinkeoUtilisateurBundle(),
+            new Welinkeo\PanierBundle\WelinkeoPanierBundle(),
+            new Welinkeo\CommandeBundle\WelinkeoCommandeBundle(),
+            new Welinkeo\CatalogueBundle\WelinkeoCatalogueBundle(),
+            new Welinkeo\BackOfficeBundle\WelinkeoBackOfficeBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {
