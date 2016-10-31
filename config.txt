@@ -1,0 +1,5 @@
+Mettre en place symfony : 
+
+1 - installer composer
+2 - dans le répertoire ou l'on veux créer le projet taper la commande :  composer create-project symfony/framework-standard-edition my_project_name
+3 - mettre à jour le répertoire en exécutant la commande composer update (se placer dans le projet)
