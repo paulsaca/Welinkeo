@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Modelivraison
  *
  * @ORM\Table(name="modelivraison")
- * @ORM\Entity(repositoryClass="Welinkeo\UtilisateurBundle\Repository\ModelivraisonRepository")
+ * @ORM\Entity
  */
 class Modelivraison
 {

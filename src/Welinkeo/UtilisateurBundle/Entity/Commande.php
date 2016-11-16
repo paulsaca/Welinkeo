@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Commande
  *
  * @ORM\Table(name="commande", uniqueConstraints={@ORM\UniqueConstraint(name="numero_UNIQUE", columns={"numero"}), @ORM\UniqueConstraint(name="numeroCommande_UNIQUE", columns={"numeroCommande"})}, indexes={@ORM\Index(name="fk_Commande_CommandeStatut1_idx", columns={"commandeStatut_id"}), @ORM\Index(name="fk_Commande_ModePaiement1_idx", columns={"modePaiement_Id"}), @ORM\Index(name="fk_Commande_ModeLivraison1_idx", columns={"modeLivraison_id"}), @ORM\Index(name="fk_Commande_ordonnance1_idx", columns={"ordonnance_id"}), @ORM\Index(name="fk_commande_beneficiaire1_idx", columns={"beneficiaire_personne_id"}), @ORM\Index(name="fk_commande_utilisateur1_idx", columns={"utilisateur_personne_id"}), @ORM\Index(name="fk_commande_pointLivraison1_idx", columns={"pointLivraison_id"})})
- * @ORM\Entity(repositoryClass="Welinkeo\UtilisateurBundle\Repository\CommandeRepository")
+ * @ORM\Entity
  */
 class Commande
 {
@@ -117,9 +117,9 @@ class Commande
     private $utilisateurPersonne;
 
     /**
-     * @var \Pointlivraison
+     * @var \Structurepartenaire
      *
-     * @ORM\ManyToOne(targetEntity="Pointlivraison")
+     * @ORM\ManyToOne(targetEntity="Structurepartenaire")
      * @ORM\JoinColumns({
      *   @ORM\JoinColumn(name="pointLivraison_id", referencedColumnName="id")
      * })
@@ -405,11 +405,11 @@ class Commande
     /**
      * Set pointlivraison
      *
-     * @param \Welinkeo\UtilisateurBundle\Entity\Pointlivraison $pointlivraison
+     * @param \Welinkeo\UtilisateurBundle\Entity\Structurepartenaire $pointlivraison
      *
      * @return Commande
      */
-    public function setPointlivraison(\Welinkeo\UtilisateurBundle\Entity\Pointlivraison $pointlivraison = null)
+    public function setPointlivraison(\Welinkeo\UtilisateurBundle\Entity\Structurepartenaire $pointlivraison = null)
     {
         $this->pointlivraison = $pointlivraison;
 
@@ -419,7 +419,7 @@ class Commande
     /**
      * Get pointlivraison
      *
-     * @return \Welinkeo\UtilisateurBundle\Entity\Pointlivraison
+     * @return \Welinkeo\UtilisateurBundle\Entity\Structurepartenaire
      */
     public function getPointlivraison()
     {

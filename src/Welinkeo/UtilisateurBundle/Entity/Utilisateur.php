@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Utilisateur
  *
  * @ORM\Table(name="utilisateur", indexes={@ORM\Index(name="fk_utilisateur_role1_idx", columns={"role_id"})})
- * @ORM\Entity(repositoryClass="Welinkeo\UtilisateurBundle\Repository\UtilisateurRepository")
+ * @ORM\Entity
  */
 class Utilisateur
 {
@@ -32,6 +32,13 @@ class Utilisateur
      * @ORM\Column(name="pointFidelite", type="integer", nullable=true)
      */
     private $pointfidelite;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="idPartenaire", type="string", length=100, nullable=true)
+     */
+    private $idpartenaire;
 
     /**
      * @var \Role
@@ -127,6 +134,30 @@ class Utilisateur
     public function getPointfidelite()
     {
         return $this->pointfidelite;
+    }
+
+    /**
+     * Set idpartenaire
+     *
+     * @param string $idpartenaire
+     *
+     * @return Utilisateur
+     */
+    public function setIdpartenaire($idpartenaire)
+    {
+        $this->idpartenaire = $idpartenaire;
+
+        return $this;
+    }
+
+    /**
+     * Get idpartenaire
+     *
+     * @return string
+     */
+    public function getIdpartenaire()
+    {
+        return $this->idpartenaire;
     }
 
     /**

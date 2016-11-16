@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Commandestatut
  *
  * @ORM\Table(name="commandestatut")
- * @ORM\Entity(repositoryClass="Welinkeo\UtilisateurBundle\Repository\CommandestatutRepository")
+ * @ORM\Entity
  */
 class Commandestatut
 {

@@ -1,0 +1,3 @@
+Welinkeo_UtilisateurBundle_testAjout:
+    path:     /client/ajout
+    defaults: { _controller: WelinkeoUtilisateurBundle:Client:add }

@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Lignecommande
  *
  * @ORM\Table(name="lignecommande", indexes={@ORM\Index(name="fk_ligneCommande_commande1_idx", columns={"commande_numeroCommande"})})
- * @ORM\Entity(repositoryClass="Welinkeo\UtilisateurBundle\Repository\LignecommandeRepository")
+ * @ORM\Entity
  */
 class Lignecommande
 {

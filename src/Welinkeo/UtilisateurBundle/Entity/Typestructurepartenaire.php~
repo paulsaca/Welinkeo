@@ -5,12 +5,12 @@ namespace Welinkeo\UtilisateurBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Modelivraison
+ * Typestructurepartenaire
  *
- * @ORM\Table(name="modelivraison")
+ * @ORM\Table(name="typestructurepartenaire")
  * @ORM\Entity
  */
-class Modelivraison
+class Typestructurepartenaire
 {
     /**
      * @var integer
@@ -24,14 +24,14 @@ class Modelivraison
     /**
      * @var string
      *
-     * @ORM\Column(name="libelle", type="string", length=45, nullable=false)
+     * @ORM\Column(name="libelle", type="string", length=45, nullable=true)
      */
     private $libelle;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="description", type="string", length=300, nullable=false)
+     * @ORM\Column(name="description", type="string", length=300, nullable=true)
      */
     private $description;
 

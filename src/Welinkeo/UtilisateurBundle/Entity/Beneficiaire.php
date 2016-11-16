@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Beneficiaire
  *
  * @ORM\Table(name="beneficiaire")
- * @ORM\Entity(repositoryClass="Welinkeo\UtilisateurBundle\Repository\BeneficiaireRepository")
+ * @ORM\Entity
  */
 class Beneficiaire
 {

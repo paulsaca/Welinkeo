@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Ordonnance
  *
  * @ORM\Table(name="ordonnance")
- * @ORM\Entity(repositoryClass="Welinkeo\UtilisateurBundle\Repository\OrdonnanceRepository")
+ * @ORM\Entity
  */
 class Ordonnance
 {

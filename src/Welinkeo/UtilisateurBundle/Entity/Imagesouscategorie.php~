@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Imagesouscategorie
  *
  * @ORM\Table(name="imagesouscategorie", indexes={@ORM\Index(name="fk_ImageSousCategorie_SousCategorie1_idx", columns={"sousCategorie_Id"})})
- * @ORM\Entity(repositoryClass="Welinkeo\UtilisateurBundle\Repository\ImagesouscategorieRepository")
+ * @ORM\Entity
  */
 class Imagesouscategorie
 {
@@ -46,86 +46,5 @@ class Imagesouscategorie
     private $souscategorie;
 
 
-
-    /**
-     * Get id
-     *
-     * @return integer
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
-
-    /**
-     * Set titre
-     *
-     * @param string $titre
-     *
-     * @return Imagesouscategorie
-     */
-    public function setTitre($titre)
-    {
-        $this->titre = $titre;
-
-        return $this;
-    }
-
-    /**
-     * Get titre
-     *
-     * @return string
-     */
-    public function getTitre()
-    {
-        return $this->titre;
-    }
-
-    /**
-     * Set url
-     *
-     * @param string $url
-     *
-     * @return Imagesouscategorie
-     */
-    public function setUrl($url)
-    {
-        $this->url = $url;
-
-        return $this;
-    }
-
-    /**
-     * Get url
-     *
-     * @return string
-     */
-    public function getUrl()
-    {
-        return $this->url;
-    }
-
-    /**
-     * Set souscategorie
-     *
-     * @param \Welinkeo\UtilisateurBundle\Entity\Souscategorie $souscategorie
-     *
-     * @return Imagesouscategorie
-     */
-    public function setSouscategorie(\Welinkeo\UtilisateurBundle\Entity\Souscategorie $souscategorie = null)
-    {
-        $this->souscategorie = $souscategorie;
-
-        return $this;
-    }
-
-    /**
-     * Get souscategorie
-     *
-     * @return \Welinkeo\UtilisateurBundle\Entity\Souscategorie
-     */
-    public function getSouscategorie()
-    {
-        return $this->souscategorie;
-    }
 }
+

@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Beneficiaire
  *
  * @ORM\Table(name="beneficiaire")
- * @ORM\Entity(repositoryClass="Welinkeo\UtilisateurBundle\Repository\BeneficiaireRepository")
+ * @ORM\Entity
  */
 class Beneficiaire
 {
@@ -39,76 +39,5 @@ class Beneficiaire
     private $personne;
 
 
-
-    /**
-     * Set question
-     *
-     * @param string $question
-     *
-     * @return Beneficiaire
-     */
-    public function setQuestion($question)
-    {
-        $this->question = $question;
-
-        return $this;
-    }
-
-    /**
-     * Get question
-     *
-     * @return string
-     */
-    public function getQuestion()
-    {
-        return $this->question;
-    }
-
-    /**
-     * Set reponse
-     *
-     * @param string $reponse
-     *
-     * @return Beneficiaire
-     */
-    public function setReponse($reponse)
-    {
-        $this->reponse = $reponse;
-
-        return $this;
-    }
-
-    /**
-     * Get reponse
-     *
-     * @return string
-     */
-    public function getReponse()
-    {
-        return $this->reponse;
-    }
-
-    /**
-     * Set personne
-     *
-     * @param \Welinkeo\UtilisateurBundle\Entity\Personne $personne
-     *
-     * @return Beneficiaire
-     */
-    public function setPersonne(\Welinkeo\UtilisateurBundle\Entity\Personne $personne)
-    {
-        $this->personne = $personne;
-
-        return $this;
-    }
-
-    /**
-     * Get personne
-     *
-     * @return \Welinkeo\UtilisateurBundle\Entity\Personne
-     */
-    public function getPersonne()
-    {
-        return $this->personne;
-    }
 }
+

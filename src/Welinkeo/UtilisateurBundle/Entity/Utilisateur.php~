@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Utilisateur
  *
  * @ORM\Table(name="utilisateur", indexes={@ORM\Index(name="fk_utilisateur_role1_idx", columns={"role_id"})})
- * @ORM\Entity(repositoryClass="Welinkeo\UtilisateurBundle\Repository\UtilisateurRepository")
+ * @ORM\Entity
  */
 class Utilisateur
 {
@@ -34,6 +34,13 @@ class Utilisateur
     private $pointfidelite;
 
     /**
+     * @var string
+     *
+     * @ORM\Column(name="idPartenaire", type="string", length=100, nullable=true)
+     */
+    private $idpartenaire;
+
+    /**
      * @var \Role
      *
      * @ORM\ManyToOne(targetEntity="Role")
@@ -56,124 +63,5 @@ class Utilisateur
     private $personne;
 
 
-
-    /**
-     * Set login
-     *
-     * @param string $login
-     *
-     * @return Utilisateur
-     */
-    public function setLogin($login)
-    {
-        $this->login = $login;
-
-        return $this;
-    }
-
-    /**
-     * Get login
-     *
-     * @return string
-     */
-    public function getLogin()
-    {
-        return $this->login;
-    }
-
-    /**
-     * Set mdp
-     *
-     * @param string $mdp
-     *
-     * @return Utilisateur
-     */
-    public function setMdp($mdp)
-    {
-        $this->mdp = $mdp;
-
-        return $this;
-    }
-
-    /**
-     * Get mdp
-     *
-     * @return string
-     */
-    public function getMdp()
-    {
-        return $this->mdp;
-    }
-
-    /**
-     * Set pointfidelite
-     *
-     * @param integer $pointfidelite
-     *
-     * @return Utilisateur
-     */
-    public function setPointfidelite($pointfidelite)
-    {
-        $this->pointfidelite = $pointfidelite;
-
-        return $this;
-    }
-
-    /**
-     * Get pointfidelite
-     *
-     * @return integer
-     */
-    public function getPointfidelite()
-    {
-        return $this->pointfidelite;
-    }
-
-    /**
-     * Set role
-     *
-     * @param \Welinkeo\UtilisateurBundle\Entity\Role $role
-     *
-     * @return Utilisateur
-     */
-    public function setRole(\Welinkeo\UtilisateurBundle\Entity\Role $role = null)
-    {
-        $this->role = $role;
-
-        return $this;
-    }
-
-    /**
-     * Get role
-     *
-     * @return \Welinkeo\UtilisateurBundle\Entity\Role
-     */
-    public function getRole()
-    {
-        return $this->role;
-    }
-
-    /**
-     * Set personne
-     *
-     * @param \Welinkeo\UtilisateurBundle\Entity\Personne $personne
-     *
-     * @return Utilisateur
-     */
-    public function setPersonne(\Welinkeo\UtilisateurBundle\Entity\Personne $personne)
-    {
-        $this->personne = $personne;
-
-        return $this;
-    }
-
-    /**
-     * Get personne
-     *
-     * @return \Welinkeo\UtilisateurBundle\Entity\Personne
-     */
-    public function getPersonne()
-    {
-        return $this->personne;
-    }
 }
+

@@ -19,8 +19,7 @@ welinkeo_panier:
     prefix:   /
 
 welinkeo_utilisateur:
-    resource: "@WelinkeoUtilisateurBundle/Controller/"
-    type:     annotation
+    resource: "@WelinkeoUtilisateurBundle/Resources/config/routing.yml"
     prefix:   /
 
 welinkeo_general:

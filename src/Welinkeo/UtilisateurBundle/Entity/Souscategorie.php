@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Souscategorie
  *
  * @ORM\Table(name="souscategorie", indexes={@ORM\Index(name="fk_SousCategorie_Categorie1_idx", columns={"categorie_Id"})})
- * @ORM\Entity(repositoryClass="Welinkeo\UtilisateurBundle\Repository\SouscategorieRepository")
+ * @ORM\Entity
  */
 class Souscategorie
 {

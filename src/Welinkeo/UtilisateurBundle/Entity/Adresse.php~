@@ -7,8 +7,8 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Adresse
  *
- * @ORM\Table(name="adresse")
- * @ORM\Entity(repositoryClass="Welinkeo\UtilisateurBundle\Repository\AdresseRepository")
+ * @ORM\Table(name="adresse", indexes={@ORM\Index(name="fk_adresse_pays1_idx", columns={"pays_id"})})
+ * @ORM\Entity
  */
 class Adresse
 {
@@ -27,13 +27,6 @@ class Adresse
      * @ORM\Column(name="adresse", type="string", length=150, nullable=false)
      */
     private $adresse;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="pays", type="string", length=45, nullable=false)
-     */
-    private $pays;
 
     /**
      * @var string
@@ -63,159 +56,16 @@ class Adresse
      */
     private $autre;
 
-
-
     /**
-     * Get id
+     * @var \Pays
      *
-     * @return integer
+     * @ORM\ManyToOne(targetEntity="Pays")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="pays_id", referencedColumnName="id")
+     * })
      */
-    public function getId()
-    {
-        return $this->id;
-    }
+    private $pays;
 
-    /**
-     * Set adresse
-     *
-     * @param string $adresse
-     *
-     * @return Adresse
-     */
-    public function setAdresse($adresse)
-    {
-        $this->adresse = $adresse;
 
-        return $this;
-    }
-
-    /**
-     * Get adresse
-     *
-     * @return string
-     */
-    public function getAdresse()
-    {
-        return $this->adresse;
-    }
-
-    /**
-     * Set pays
-     *
-     * @param string $pays
-     *
-     * @return Adresse
-     */
-    public function setPays($pays)
-    {
-        $this->pays = $pays;
-
-        return $this;
-    }
-
-    /**
-     * Get pays
-     *
-     * @return string
-     */
-    public function getPays()
-    {
-        return $this->pays;
-    }
-
-    /**
-     * Set ville
-     *
-     * @param string $ville
-     *
-     * @return Adresse
-     */
-    public function setVille($ville)
-    {
-        $this->ville = $ville;
-
-        return $this;
-    }
-
-    /**
-     * Get ville
-     *
-     * @return string
-     */
-    public function getVille()
-    {
-        return $this->ville;
-    }
-
-    /**
-     * Set codepostal
-     *
-     * @param string $codepostal
-     *
-     * @return Adresse
-     */
-    public function setCodepostal($codepostal)
-    {
-        $this->codepostal = $codepostal;
-
-        return $this;
-    }
-
-    /**
-     * Get codepostal
-     *
-     * @return string
-     */
-    public function getCodepostal()
-    {
-        return $this->codepostal;
-    }
-
-    /**
-     * Set communecartier
-     *
-     * @param string $communecartier
-     *
-     * @return Adresse
-     */
-    public function setCommunecartier($communecartier)
-    {
-        $this->communecartier = $communecartier;
-
-        return $this;
-    }
-
-    /**
-     * Get communecartier
-     *
-     * @return string
-     */
-    public function getCommunecartier()
-    {
-        return $this->communecartier;
-    }
-
-    /**
-     * Set autre
-     *
-     * @param string $autre
-     *
-     * @return Adresse
-     */
-    public function setAutre($autre)
-    {
-        $this->autre = $autre;
-
-        return $this;
-    }
-
-    /**
-     * Get autre
-     *
-     * @return string
-     */
-    public function getAutre()
-    {
-        return $this->autre;
-    }
 }
+

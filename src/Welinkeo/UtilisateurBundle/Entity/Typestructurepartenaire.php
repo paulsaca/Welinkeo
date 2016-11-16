@@ -5,12 +5,12 @@ namespace Welinkeo\UtilisateurBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Modepaiement
+ * Typestructurepartenaire
  *
- * @ORM\Table(name="modepaiement")
+ * @ORM\Table(name="typestructurepartenaire")
  * @ORM\Entity
  */
-class Modepaiement
+class Typestructurepartenaire
 {
     /**
      * @var integer
@@ -24,14 +24,14 @@ class Modepaiement
     /**
      * @var string
      *
-     * @ORM\Column(name="libelle", type="string", length=45, nullable=false)
+     * @ORM\Column(name="libelle", type="string", length=45, nullable=true)
      */
     private $libelle;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="description", type="text", length=65535, nullable=false)
+     * @ORM\Column(name="description", type="string", length=300, nullable=true)
      */
     private $description;
 
@@ -52,7 +52,7 @@ class Modepaiement
      *
      * @param string $libelle
      *
-     * @return Modepaiement
+     * @return Typestructurepartenaire
      */
     public function setLibelle($libelle)
     {
@@ -76,7 +76,7 @@ class Modepaiement
      *
      * @param string $description
      *
-     * @return Modepaiement
+     * @return Typestructurepartenaire
      */
     public function setDescription($description)
     {

@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Imagecategorie
  *
  * @ORM\Table(name="imagecategorie", indexes={@ORM\Index(name="fk_ImageCategorie_Categorie1_idx", columns={"categorie_Id"})})
- * @ORM\Entity(repositoryClass="Welinkeo\UtilisateurBundle\Repository\ImagecategorieRepository")
+ * @ORM\Entity
  */
 class Imagecategorie
 {
@@ -46,86 +46,5 @@ class Imagecategorie
     private $categorie;
 
 
-
-    /**
-     * Get id
-     *
-     * @return integer
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
-
-    /**
-     * Set title
-     *
-     * @param string $title
-     *
-     * @return Imagecategorie
-     */
-    public function setTitle($title)
-    {
-        $this->title = $title;
-
-        return $this;
-    }
-
-    /**
-     * Get title
-     *
-     * @return string
-     */
-    public function getTitle()
-    {
-        return $this->title;
-    }
-
-    /**
-     * Set url
-     *
-     * @param string $url
-     *
-     * @return Imagecategorie
-     */
-    public function setUrl($url)
-    {
-        $this->url = $url;
-
-        return $this;
-    }
-
-    /**
-     * Get url
-     *
-     * @return string
-     */
-    public function getUrl()
-    {
-        return $this->url;
-    }
-
-    /**
-     * Set categorie
-     *
-     * @param \Welinkeo\UtilisateurBundle\Entity\Categorie $categorie
-     *
-     * @return Imagecategorie
-     */
-    public function setCategorie(\Welinkeo\UtilisateurBundle\Entity\Categorie $categorie = null)
-    {
-        $this->categorie = $categorie;
-
-        return $this;
-    }
-
-    /**
-     * Get categorie
-     *
-     * @return \Welinkeo\UtilisateurBundle\Entity\Categorie
-     */
-    public function getCategorie()
-    {
-        return $this->categorie;
-    }
 }
+

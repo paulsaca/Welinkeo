@@ -3,12 +3,13 @@
 namespace Welinkeo\UtilisateurBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Adresse
  *
- * @ORM\Table(name="adresse")
- * @ORM\Entity(repositoryClass="Welinkeo\UtilisateurBundle\Repository\AdresseRepository")
+ * @ORM\Table(name="adresse", indexes={@ORM\Index(name="fk_adresse_pays1_idx", columns={"pays_id"})})
+ * @ORM\Entity
  */
 class Adresse
 {
@@ -24,6 +25,16 @@ class Adresse
     /**
      * @var string
      *
+     * @Assert\NotBlank(message = "Ce champ ne peut pas etre vide."
+     *	)
+     *
+     * @Assert\Length(
+     * 			min = 4,
+     * 			max = 150,
+     * 			minMessage = "minimum {{ limit }} caracteres.",			
+     * 			maxMessage = "maximum {{ limit }} caracteres."
+     * )
+     *
      * @ORM\Column(name="adresse", type="string", length=150, nullable=false)
      */
     private $adresse;
@@ -31,12 +42,15 @@ class Adresse
     /**
      * @var string
      *
-     * @ORM\Column(name="pays", type="string", length=45, nullable=false)
-     */
-    private $pays;
-
-    /**
-     * @var string
+     * @Assert\NotBlank(message = "Ce champ ne peut pas etre vide."
+     *	)
+     *
+     * @Assert\Length(
+     * 			min = 2,
+     * 			max = 30,
+     * 			minMessage = "minimum {{ limit }} caracteres.",			
+     * 			maxMessage = "maximum {{ limit }} caracteres."
+     * )
      *
      * @ORM\Column(name="ville", type="string", length=30, nullable=false)
      */
@@ -45,12 +59,23 @@ class Adresse
     /**
      * @var string
      *
+     *
+     * @Assert\Length(
+     * 			max = 10,	
+     * 			maxMessage = "maximum {{ limit }} caracteres."
+     * )
+     *
      * @ORM\Column(name="codePostal", type="string", length=10, nullable=true)
      */
     private $codepostal;
 
     /**
      * @var string
+     *
+     * @Assert\Length(
+     * 			max = 100,			
+     * 			maxMessage = "maximum {{ limit }} caracteres."
+     * )
      *
      * @ORM\Column(name="communeCartier", type="string", length=100, nullable=true)
      */
@@ -59,9 +84,24 @@ class Adresse
     /**
      * @var string
      *
+     * @Assert\Length(
+     * 			max = 300,			
+     * 			maxMessage = "maximum {{ limit }} caracteres."
+     * )
+     *
      * @ORM\Column(name="autre", type="string", length=300, nullable=true)
      */
     private $autre;
+
+    /**
+     * @var \Pays
+     *
+     * @ORM\ManyToOne(targetEntity="Pays")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="pays_id", referencedColumnName="id")
+     * })
+     */
+    private $pays;
 
 
 
@@ -97,30 +137,6 @@ class Adresse
     public function getAdresse()
     {
         return $this->adresse;
-    }
-
-    /**
-     * Set pays
-     *
-     * @param string $pays
-     *
-     * @return Adresse
-     */
-    public function setPays($pays)
-    {
-        $this->pays = $pays;
-
-        return $this;
-    }
-
-    /**
-     * Get pays
-     *
-     * @return string
-     */
-    public function getPays()
-    {
-        return $this->pays;
     }
 
     /**
@@ -217,5 +233,29 @@ class Adresse
     public function getAutre()
     {
         return $this->autre;
+    }
+
+    /**
+     * Set pays
+     *
+     * @param \Welinkeo\UtilisateurBundle\Entity\Pays $pays
+     *
+     * @return Adresse
+     */
+    public function setPays(\Welinkeo\UtilisateurBundle\Entity\Pays $pays = null)
+    {
+        $this->pays = $pays;
+
+        return $this;
+    }
+
+    /**
+     * Get pays
+     *
+     * @return \Welinkeo\UtilisateurBundle\Entity\Pays
+     */
+    public function getPays()
+    {
+        return $this->pays;
     }
 }

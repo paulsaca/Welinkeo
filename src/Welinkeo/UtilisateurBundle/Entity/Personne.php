@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Personne
  *
  * @ORM\Table(name="personne", indexes={@ORM\Index(name="fk_personne_adresse1_idx", columns={"adresse_id"})})
- * @ORM\Entity(repositoryClass="Welinkeo\UtilisateurBundle\Repository\PersonneRepository")
+ * @ORM\Entity
  */
 class Personne
 {

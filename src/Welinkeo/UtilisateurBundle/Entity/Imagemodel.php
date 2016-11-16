@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Imagemodel
  *
  * @ORM\Table(name="imagemodel", uniqueConstraints={@ORM\UniqueConstraint(name="ImageModel_Id_UNIQUE", columns={"id"})}, indexes={@ORM\Index(name="fk_ImageModel_Model1_idx", columns={"model_Id"})})
- * @ORM\Entity(repositoryClass="Welinkeo\UtilisateurBundle\Repository\ImagemodelRepository")
+ * @ORM\Entity
  */
 class Imagemodel
 {

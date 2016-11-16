@@ -1,0 +1,74 @@
+<?php
+
+namespace Welinkeo\UtilisateurBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Structurepartenaire
+ *
+ * @ORM\Table(name="structurepartenaire", indexes={@ORM\Index(name="fk_pointLivraison_typePointLivraison1_idx", columns={"typePointLivraison_id"}), @ORM\Index(name="fk_pointLivraison_adresse1_idx", columns={"adresse_id"})})
+ * @ORM\Entity
+ */
+class Structurepartenaire
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="Nom", type="string", length=50, nullable=false)
+     */
+    private $nom;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="AgenceTelephone", type="string", length=15, nullable=false)
+     */
+    private $agencetelephone;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="QuartierCommune", type="string", length=100, nullable=false)
+     */
+    private $quartiercommune;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="Autre", type="string", length=100, nullable=false)
+     */
+    private $autre;
+
+    /**
+     * @var \Typestructurepartenaire
+     *
+     * @ORM\ManyToOne(targetEntity="Typestructurepartenaire")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="typePointLivraison_id", referencedColumnName="id")
+     * })
+     */
+    private $typepointlivraison;
+
+    /**
+     * @var \Adresse
+     *
+     * @ORM\ManyToOne(targetEntity="Adresse")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="adresse_id", referencedColumnName="id")
+     * })
+     */
+    private $adresse;
+
+
+}
+

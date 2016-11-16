@@ -3,14 +3,15 @@
 namespace Welinkeo\UtilisateurBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
- * Role
+ * Pays
  *
- * @ORM\Table(name="role")
+ * @ORM\Table(name="pays")
  * @ORM\Entity
  */
-class Role
+class Pays
 {
     /**
      * @var integer
@@ -24,7 +25,17 @@ class Role
     /**
      * @var string
      *
-     * @ORM\Column(name="nom", type="string", length=45, nullable=false)
+     * @Assert\NotBlank(message = "Ce champ ne peut pas etre vide."
+     *	)
+     *
+     * @Assert\Length(
+     * 			min = 2,
+     * 			max = 50,
+     * 			minMessage = "minimum {{ limit }} caracteres.",			
+     * 			maxMessage = "maximum {{ limit }} caracteres."
+     * )
+     *
+     * @ORM\Column(name="nom", type="string", length=50, nullable=true)
      */
     private $nom;
 
@@ -45,7 +56,7 @@ class Role
      *
      * @param string $nom
      *
-     * @return Role
+     * @return Pays
      */
     public function setNom($nom)
     {

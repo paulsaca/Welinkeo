@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Depot
  *
  * @ORM\Table(name="depot")
- * @ORM\Entity(repositoryClass="Welinkeo\UtilisateurBundle\Repository\DepotRepository")
+ * @ORM\Entity
  */
 class Depot
 {

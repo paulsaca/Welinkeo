@@ -5,17 +5,17 @@ namespace Welinkeo\UtilisateurBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Categorie
+ * Pays
  *
- * @ORM\Table(name="categorie")
+ * @ORM\Table(name="pays")
  * @ORM\Entity
  */
-class Categorie
+class Pays
 {
     /**
      * @var integer
      *
-     * @ORM\Column(name="Id", type="integer", nullable=false)
+     * @ORM\Column(name="id", type="integer", nullable=false)
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
@@ -24,7 +24,7 @@ class Categorie
     /**
      * @var string
      *
-     * @ORM\Column(name="nom", type="string", length=45, nullable=false)
+     * @ORM\Column(name="nom", type="string", length=50, nullable=true)
      */
     private $nom;
 

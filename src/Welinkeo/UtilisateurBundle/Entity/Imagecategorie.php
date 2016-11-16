@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Imagecategorie
  *
  * @ORM\Table(name="imagecategorie", indexes={@ORM\Index(name="fk_ImageCategorie_Categorie1_idx", columns={"categorie_Id"})})
- * @ORM\Entity(repositoryClass="Welinkeo\UtilisateurBundle\Repository\ImagecategorieRepository")
+ * @ORM\Entity
  */
 class Imagecategorie
 {
