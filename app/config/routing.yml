@@ -1,21 +1,17 @@
 welinkeo_back_office:
-    resource: "@WelinkeoBackOfficeBundle/Controller/"
-    type:     annotation
+    resource: "@WelinkeoBackOfficeBundle/Resources/config/routing.yml"
     prefix:   /
 
 welinkeo_catalogue:
-    resource: "@WelinkeoCatalogueBundle/Controller/"
-    type:     annotation
+    resource: "@WelinkeoCatalogueBundle/Resources/config/routing.yml"
     prefix:   /
 
 welinkeo_commande:
-    resource: "@WelinkeoCommandeBundle/Controller/"
-    type:     annotation
+    resource: "@WelinkeoCommandeBundle/Resources/config/routing.yml"
     prefix:   /
 
 welinkeo_panier:
-    resource: "@WelinkeoPanierBundle/Controller/"
-    type:     annotation
+    resource: "@WelinkeoPanierBundle/Resources/config/routing.yml"
     prefix:   /
 
 welinkeo_utilisateur:
@@ -23,8 +19,7 @@ welinkeo_utilisateur:
     prefix:   /
 
 welinkeo_general:
-    resource: "@WelinkeoGeneralBundle/Controller/"
-    type:     annotation
+    resource: "@WelinkeoGeneralBundle/Resources/config/routing.yml"
     prefix:   /
 
 app:
