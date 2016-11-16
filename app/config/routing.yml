@@ -1,22 +1,22 @@
 welinkeo_back_office:
     resource: "@WelinkeoBackOfficeBundle/Resources/config/routing.yml"
-    prefix:   /
+    prefix:   /back
 
 welinkeo_catalogue:
     resource: "@WelinkeoCatalogueBundle/Resources/config/routing.yml"
-    prefix:   /
+    prefix:   /catologue
 
 welinkeo_commande:
     resource: "@WelinkeoCommandeBundle/Resources/config/routing.yml"
-    prefix:   /
+    prefix:   /commande
 
 welinkeo_panier:
     resource: "@WelinkeoPanierBundle/Resources/config/routing.yml"
-    prefix:   /
+    prefix:   /panier
 
 welinkeo_utilisateur:
     resource: "@WelinkeoUtilisateurBundle/Resources/config/routing.yml"
-    prefix:   /
+    prefix:   /utilisateur
 
 welinkeo_general:
     resource: "@WelinkeoGeneralBundle/Resources/config/routing.yml"
